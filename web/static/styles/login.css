@@ -1,0 +1,193 @@
+*{
+margin: 0; padding: 0;
+}
+html{
+  background: #eee;
+  font-family: 'Helvetica';
+}
+body{
+  width: 100%;
+  margin: auto;
+}
+h1{
+    color: black;
+    text-align: center;
+  }
+/* Навигация страницы */
+.nav{
+  background: #222;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+.nav-wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li{
+  display: inline-block;
+}
+
+.nav ul li:hover{
+  background: #333;
+}
+.nav ul li a, visited{
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+.main_a{
+  color: #ccc;
+}
+
+/* Обертка основного контента для нормального отображения */
+.wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+.content{
+  font-family: 'Roboto Thin', arial;
+  letter-spacing: 1.2px;
+  margin: 70px 0 0 0;
+}
+
+/* Остальное */
+hr{
+  margin: 15px auto;
+  width: 50%;
+  color: black;
+  height: 2px;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+}
+img.earth {
+  animation: 10s linear 0s normal none infinite running rot;
+  -webkit-animation: 10s linear 0s normal none infinite running rot;
+}
+.earth{
+  width: 100px;
+  margin: 15px;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили формы */
+
+form{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  background: rgba(255, 255, 255,0.8);;
+  width: 300px;
+  height: 360px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.height{
+  height: 700px;
+}
+
+.med_height{
+  height: 400px;
+}
+
+.smallform{
+  height: 200px;
+}
+
+.line{
+  display: inline-block;
+  margin: 25px;
+  vertical-align: top;
+}
+
+.field{
+  background: white;
+  border: 1px solid black;
+  margin: 10px;
+  height: 35px;
+  width: 200px;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+}
+.field:focus{
+  border: 1px solid orange;
+}
+
+.but{
+  margin: 10px;
+  padding: 15px;
+  border: 2px black solid;
+  background: white;
+  font-size: 15px;
+}
+.but:hover{
+  border: 2px orange solid;
+  color: orange;
+  cursor: pointer;
+}
+
+/* Надпись вход */
+.text{
+    color: black;
+    font-size: 2rem;
+    font-family: 'Roboto Regular', arial;
+}
+.small{
+  font-size:  1rem;
+}
+
+.hr-small{
+  width: 275px;
+}
+/* Надпись под формой */
+.reg{
+  margin: 20px;
+  font-size: 1rem;
+}
+
+.now{
+  background: #179;
+  color: white;
+}
+.dop_a{
+  color: rgb(24, 162, 14);
+}
+
+.info{
+  width: 300px;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.info > p{
+  margin: 10px;
+}

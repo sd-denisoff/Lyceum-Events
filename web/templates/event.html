@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+    <title> Информация </title>
+{% endblock head %}
+
+{% block menu %}
+    <li><a class='main_a' href="/"> Главная </a></li>
+    <li><a class='main_a' href='/make'> Создать мероприятие </a></li>
+    {% if session['logged_in'] %}
+    <li><a class='main_a' href='/account'> {{ session['username'] }} </a></li>
+    <li><a class='main_a' href='/logout'> Выйти </a></li>
+    {% else %}
+    <li><a class='main_a' href='/login'> Войти </a></li>
+    <li><a class='main_a' href='/registration'> Зарегистрироваться </a></li>
+    {% endif %}
+    <li><a class='main_a' href='/info'> О проекте </a></li>
+    <li><a class='main_a' href='/feedback'> Отзывы </a></li>
+{% endblock menu %}
+
+{% block content %}
+    {% if session['logged_in'] %}
+        <div class='vote'>
+            <h2 class='title'>{{ event.title }}</h2> </br>
+            <h3 style="font-family: 'Inder', sans-serif; line-height: 28px; margin-bottom: 15px; color: #666;"> {{ event.content }}</h3>
+            <div>
+                <div class='calendar'></div>
+                <div style="margin: 1px 1px; display: inline-block;">{{ event.date }}</div>
+            </div>
+            {% if is_voted == 0 %}
+                <p class='answers'>
+                    <form method="POST" name="resultForm">
+                        {% for opt in options %}
+                              <ul class='left'>
+                                </input class='haha' id="checkbox-1" name="option" type="checkbox">
+                                <label for="checkbox-1" class="checkbox-label"> {{ opt.text }} </label>
+                              </ul>
+                        {% endfor %}
+                        <p id="getResult"><input class="but" type="submit" value=""></p>
+                    </form>
+                </p>
+            {% elif is_voted == 1 %}
+                 <p class='title'>{{ event.rating }}</p>
+                <p><a href="/"><input class="but close" type="submit" value=""></a></p>
+            {% endif %}
+            </br>
+            <h5 class='author'>{{ event.author.name }}</h5>
+        </div>
+    {% else %}
+    <p> Эта страница доступна только авторизованным пользователям. <a href="/login">Присоединяйся к нам!</a></p>
+    <hr class='hr-small'>
+    <a href='/account'><img class='earth' src="{{ url_for('static', filename='img/planet-earth.svg') }}" alt='img' /></a>
+    {% endif %}
+{% endblock content %}

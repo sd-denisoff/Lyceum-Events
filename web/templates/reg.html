@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+    <title> Регистрация </title>
+{% endblock head %}
+
+{% block menu %}
+  <li><a class='main_a' href="/"> Главная </a></li>
+  <li><a class='main_a' href='/make'> Создать опрос </a></li>
+  {% if session['logged_in'] %}
+  <li><a class='main_a' href='/account'> {{ session['username'] }} </a></li>
+  <li><a class='main_a' href='/logout'> Выйти </a></li>
+  {% else %}
+  <li><a class='main_a' href='/login'> Войти </a></li>
+  <li><a class='main_a now' href='/registration'> Зарегистрироваться </a></li>
+  {% endif %}
+  <li><a class='main_a' href='/info'> О проекте </a></li>
+  <li><a class='main_a' href='/feedback'> Отзыв </a></li>
+{% endblock menu %}
+
+{% block content %}
+    {% if session['logged_in'] %}
+    Вы уже авторизованы. <a href='/make'>Создавайте мероприятие!</a> <br />
+    <a href='/make'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+    {% else %}
+    <p style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial; margin: 20px;">{{ error_text }}</p>
+    <form action="/registration" method="POST" name="reg" class='height'>
+        {{ form.hidden_tag() }}
+        <p class='text'> Регистрация </p>
+        <span id='er' style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;"></span>
+        <hr class='hr-small'>
+        <p class='text small'> Ваше имя и фамилия</p>
+        {{ form.name(class_='field', placeholder='Ваше имя и фамилия', type='text') }} <br>
+        {% for error in form.errors.name %}
+        <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{ error }}</span>
+        {% endfor %} <br>
+
+        <p class='text small'> Ваш email</p>
+        {{ form.email(class_='field', placeholder='Ваш email', type='email') }} <br>
+        {% for error in form.errors.email %}
+        <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{ error }}</span>
+        {% endfor %} <br>
+
+        <p class='text small'> Ваш логин</p>
+        {{ form.login(class_='field', placeholder='Ваш логин', type='text') }} <br />
+        {% for error in form.errors.login %}
+        <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{ error }}</span>
+        {% endfor %} <br>
+
+        <p class='text small'> Ваш пароль</p>
+        {{ form.password(class_='field', placeholder='Ваш пароль', type='password') }} <br />
+        {% for error in form.errors.password %}
+        <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{ error }}</span>
+        {% endfor %} <br>
+
+        <p class='text small'> Подтвердите пароль </p>
+        {{ form.confirm(class_='field', placeholder='Подтвердите пароль', type='password') }} <br />
+        {% for error in form.errors.confirm %}
+        <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{ error }}</span>
+        {% endfor %} <br>
+
+        <p><input class='but' type="submit" value="Зарегистрироваться"></p>
+    </form>
+
+    <p class='reg'>
+        У Вас уже есть аккаунт? <br /> Переходите на <a class='dop_a' href='/login'> страницу входа! </a>
+    </p>
+{% endif %}
+{% endblock content %}

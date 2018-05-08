@@ -1,0 +1,277 @@
+*{
+margin: 0; padding: 0;
+}
+html{
+  background: #eee;
+  font-family: 'Helvetica';
+}
+body{
+  width: 100%;
+  margin: auto;
+}
+h1{
+    color: black;
+    text-align: center;
+  }
+/* Навигация страницы */
+.nav{
+  background: #222;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+.nav-wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li{
+  display: inline-block;
+}
+
+.nav ul li:hover{
+  background: #333;
+}
+.nav ul li a, visited{
+display: block;
+padding: 15px;
+text-decoration: none;
+}
+.main_a{
+  color: #ccc;
+}
+.now{
+  background: #179;
+  color: white;
+}
+/* Обертка основного контента для нормального отображения */
+.wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+.content{
+  font-family: 'Roboto Thin', arial;
+  letter-spacing: 1.2px;
+  margin: 70px 0 0 0;
+}
+
+/* Остальное */
+hr{
+  margin: 15px auto;
+  width: 50%;
+  color: black;
+  height: 2px;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+}
+.hr-small{
+  width: 275px;
+}
+img.earth {
+  animation: 10s linear 0s normal none infinite running rot;
+  -webkit-animation: 10s linear 0s normal none infinite running rot;
+}
+.earth{
+  width: 100px;
+  margin: 15px;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+form{
+  margin: 10px auto;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  background: rgba(255, 255, 255,0.8);;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Классы формы */
+.event{
+  height: 500px;
+}
+
+
+.field{
+  background: white;
+  border: 1px solid black;
+  margin: 10px;
+  height: 65px;
+  width: 90%;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+  resize: none; /* Запрещаем изменять размер */
+}
+.field:focus{
+  border: 1px solid orange;
+}
+
+.big{
+  height: 150px; /* Высота поля в пикселах */
+}
+
+.but{
+  margin: 15px;
+  padding: 15px;
+  border: 2px black solid;
+  background: white;
+  font-size: 15px;
+  outline: none;
+}
+.but:hover{
+  border: 2px orange solid;
+  color: orange;
+  cursor: pointer;
+}
+
+.add, .remove{
+  margin: 15px;
+  padding: 10px;
+  border: 2px black solid;
+  background: white;
+  font-size: 12px;
+  outline: none;
+}
+.add:hover{
+  border: 2px green solid;
+  color: green;
+  cursor: pointer;
+}
+.remove:hover{
+  border: 2px red solid;
+  color: red;
+  cursor: pointer;
+}
+
+/* Надпись вход */
+.text{
+    color: black;
+    font-size: 2rem;
+    font-family: 'Roboto Regular', arial;
+}
+
+.small_text{
+  color: black;
+  font-size: .9rem;
+  font-family: 'Roboto Regular', arial;
+}
+
+.which{
+  margin: 10px;
+}
+
+/* Красивые radio кнопочки */
+.radio {
+  margin: 0.5rem;
+}
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.radio input[type="radio"] + .radio-label:before {
+  content: '';
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.radio input[type="radio"]:checked + .radio-label:before {
+  background-color: #3197EE;
+  -webkit-box-shadow: inset 0 0 0 4px #f4f4f4;
+          box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="radio"]:focus + .radio-label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+label{
+  color: black;
+  font-size: 12px;
+}
+
+/* Надпись под формой */
+.reg{
+  margin: 20px;
+  font-size: 1rem;
+}
+
+.disabled{
+  opacity: 0.4;
+}
+.disabled:hover{
+  border: 2px black solid;
+  color: black;
+  cursor:auto;
+}
+
+.dop_a{
+  color: rgb(24, 162, 14);
+}
+
+table{
+  margin: 25px auto;
+  border-collapse: collapse;
+  max-width: 80%;
+}
+td{
+  padding: 10px 20px 10px 20px;
+}
+tr{
+  transition: .3s all;
+}
+th{
+  padding: 10px;
+}
+tr:hover{
+  background-color: #179;
+  color: white;
+}
+.non-hover:hover{
+  background-color: #eee;
+  color: black;
+}
+
+.left{
+  max-width: 400px;
+  border-radius: 10px 0 0 10px;
+}
+
+.right{
+  border-radius: 0 10px 10px 0;
+}

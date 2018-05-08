@@ -1,0 +1,23 @@
+.line{
+  display: inline-block;
+  margin: 25px;
+  vertical-align: top;
+}
+
+.icon{
+  width: 75px;
+  margin: 20px;
+  transition: .5s all;
+}
+
+.change{
+  text-decoration: none;
+  color: black;
+  transition: .4s all;
+}
+.change:hover{
+  color: #179;
+}
+.bright{
+  filter: brightness(0);
+}

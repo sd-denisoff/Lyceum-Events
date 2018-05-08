@@ -1,0 +1,136 @@
+*{
+margin: 0; padding: 0;
+}
+html{
+  background: #eee;
+  font-family: 'Helvetica';
+}
+body{
+  width: 100%;
+  margin: auto;
+}
+h1{
+    color: black;
+    text-align: center;
+  }
+/* Навигация страницы */
+.nav{
+  background: #222;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+.nav-wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li{
+  display: inline-block;
+}
+
+.nav ul li:hover{
+  background: #333;
+}
+.nav ul li a, visited{
+display: block;
+padding: 15px;
+text-decoration: none;
+}
+
+.main_a{
+  color: #ccc;
+}
+
+.now{
+  background: #179;
+  color: white;
+}
+
+/* Обертка основного контента для нормального отображения */
+.wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+.content{
+  font-family: 'Roboto Thin', arial;
+  letter-spacing: 1.2px;
+  margin: 70px 0 0 0;
+}
+
+/* Остальное */
+hr{
+  margin: 15px auto;
+  width: 50%;
+  color: black;
+  height: 2px;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Это движение картинки */
+img.earth {
+  animation: 10s linear 0s normal none infinite running rot;
+  -webkit-animation: 10s linear 0s normal none infinite running rot;
+}
+.earth{
+  width: 100px;
+  margin: 15px;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Таблица */
+
+table{
+  margin: 25px auto;
+  border-collapse: collapse;
+  max-width: 80%;
+}
+td{
+  padding: 10px 20px 10px 20px;
+}
+tr{
+  transition: .3s all;
+}
+tr:hover{
+  background-color: #179;
+  color: white;
+}
+.non-hover:hover{
+  background-color: #eee;
+  color: black;
+}
+
+.left{
+  border-radius: 10px 0 0 10px;
+}
+
+.right{
+  border-radius: 0 10px 10px 0;
+}
+.dop_a{
+  color: rgb(24, 162, 14);
+}
