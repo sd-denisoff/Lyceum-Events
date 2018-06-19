@@ -1,1 +1,1 @@
-web: python dealscraper/runner.py
+web: python runner.py
