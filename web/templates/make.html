@@ -6,7 +6,7 @@
     <title> Создание мероприятия </title>
 {% endblock head %}
 
-{% block menu %}п
+{% block menu %}
     <li><a class='main_a' href="/"> Главная </a></li>
     <li><a class='main_a now' href='/make'> Создать мероприятие </a></li>
     {% if session['logged_in'] %}
@@ -55,6 +55,6 @@
     {% else %}
     <p> Вам надо <a class='dop_a' href="/login"> войти</a> или <a class='dop_a' href="/registration">зарегистрироваться</a>, чтобы создавать опросы! </p>
     <hr>
-    <a href='/login'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+    <a href='/login'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
     {% endif %}
 {% endblock content %}

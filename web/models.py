@@ -7,14 +7,13 @@ class User(db.Model):
     email = db.Column(db.String(256), unique=True)
     login = db.Column(db.String(120), unique=True)
     password = db.Column(db.String(256))
-    role = db.Column(db.String(120))
+    role = db.Column(db.String(120), default='no')
 
-    def __init__(self, name, email, login, password, role):
+    def __init__(self, name, email, login, password):
         self.name = name
         self.email = email
         self.login = login
         self.password = password
-        self.role = role
 
     def save(self):
         db.session.add(self)
@@ -72,7 +71,6 @@ class Event(db.Model):
     title = db.Column(db.String(128))
     content = db.Column(db.String(256))
     date = db.Column(db.String(256))
-    rating = db.Column(db.String(10))
     author_login = db.Column(db.String(128), db.ForeignKey('user.login'))
     author = db.relationship('User', backref=db.backref('events'))
 
@@ -80,7 +78,6 @@ class Event(db.Model):
         self.title = title
         self.content = content
         self.date = date
-        self.rating = '0'
         self.author_login = author_login
 
     def save(self):
@@ -102,7 +99,8 @@ class Event(db.Model):
         for event in events:
             if event.author_login == login:
                 user_events.append(event)
-        return user_events.reverse()
+        user_events.reverse()
+        return user_events
 
     # Получает мероприятие по его id
     @staticmethod

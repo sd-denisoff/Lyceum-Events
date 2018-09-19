@@ -9,7 +9,7 @@
 
 {% block menu %}
     <li><a class='main_a' href="/"> Главная </a></li>
-    <li><a class='main_a' href='/make'> Создать опрос </a></li>
+    <li><a class='main_a' href='/make'> Создать мероприятие </a></li>
     {% if session['logged_in'] %}
     <li><a class='main_a' href='/account'> {{ session['username'] }} </a></li>
     <li><a class='main_a' href='/logout'> Выйти </a></li>
@@ -98,11 +98,11 @@
         </table>
         {% elif role == 'user' or role == 'moderator' %}
         Эта страница доступна только администраторам. <a href='/make'>Создавайте опрос!</a><br>
-        <a href='/make'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+        <a href='/make'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
         {% endif %}
 
         {% else %}
         <a href="/registration">Присоединяйся к нам!</a><br>
-        <a href='/registration'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+        <a href='/registration'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
     {% endif %}
 {% endblock content %}

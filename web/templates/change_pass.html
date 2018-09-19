@@ -8,7 +8,7 @@
 
 {% block menu %}
      <li><a class='main_a' href='/'> Главная </a></li>
-     <li><a class='main_a' href='/make'> Создать опрос </a></li>
+     <li><a class='main_a' href='/make'> Создать мероприятие </a></li>
      {% if session['logged_in'] %}
      <li><a class='main_a' href='/account'> {{ session['username'] }} </a></li>
      <li><a class='main_a' href='/logout'> Выйти </a></li>
@@ -27,17 +27,17 @@
         {{ form.hidden_tag() }}
         <p class='text'> Смена пароля </p>
 
-        {{form.old_pass(class_='field', placeholder='Старый пароль', type='password')}} <br>
+        {{form.old_password(class_='field', placeholder='Старый пароль', type='password')}} <br>
         {% for error in form.errors.old_pass %}
         <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{error}}</span>
         {% endfor %} <br>
 
-        {{ form.new_pass(class_='field', placeholder='Новый пароль', type='password') }} <br />
+        {{ form.new_password(class_='field', placeholder='Новый пароль', type='password') }} <br />
         {% for error in form.errors.new_pass %}
         <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{error}}</span>
         {% endfor %} <br>
 
-        {{ form.confirm_new_pass(class_='field', placeholder='Подтвердите пароль', type='password') }} <br />
+        {{ form.confirm_new_password(class_='field', placeholder='Подтвердите пароль', type='password') }} <br />
         {% for error in form.errors.confirm_new_pass %}
         <span style="color: red; font-size: 0.7rem; font-family:'Roboto Regular', arial;">{{error}}</span>
         {% endfor %} <br>
@@ -46,6 +46,6 @@
         </form>
         {% else %}
         <p> Эта страница доступна только авторизованным пользователям. <a href="/login">Присоединяйся к нам!</a></p>
-        <a href='/login'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+        <a href='/login'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
     {% endif %}
 {% endblock content%}

@@ -8,7 +8,7 @@
 
 {% block menu %}
       <li><a class='main_a' href='/'> Главная </a></li>
-      <li><a class='main_a' href='/make'> Создать опрос </a></li>
+      <li><a class='main_a' href='/make'> Создать мероприятие </a></li>
       {% if session['logged_in'] %}
       <li><a class='main_a' href='/account'> {{ session['username'] }} </a></li>
       <li><a class='main_a' href='/logout'> Выйти </a></li>
@@ -35,11 +35,11 @@
             {% endfor %} <br>
             <p><input class='but' type="submit" value="Опубликовать"></p>
         </form>
-        <hr class='hr-small'>
         {% else %}
         <p> Отзыв могут написать только авторизованные пользователи. <a href="/login">Присоединяйся к нам!</a></p>
-        <hr class='hr-small'>
     {% endif %}
+    {% if all_feedbacks %}
+    <hr class='hr-small'>
     <h3> Другие отзывы </h3>
     <table>
         <tr class='non-hover'>
@@ -53,4 +53,5 @@
         </tr>
         {% endfor %}
     </table>
+    {% endif %}
 {% endblock content %}

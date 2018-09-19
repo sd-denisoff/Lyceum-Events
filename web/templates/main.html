@@ -44,15 +44,15 @@
         {% endfor %}
     </table>
     <hr>
-    <a href='/account'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+    <a href='/account'><img class="earth" src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
 
     {% else %}
         <p> Нет актуальных мероприятий. <a class="dop_a" href="/make"> Хотите быть первым? </a></p>
         <hr/>
         {% if session['logged_in'] %}
-            <a href='/account'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+            <a href='/account'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
         {% else %}
-            <a href='/registration'><img class='earth' src="{{url_for('static', filename='img/planet-earth.svg')}}" alt='img' /></a>
+            <a href='/registration'><img class='earth' src="{{url_for('static', filename='img/logo.png')}}" alt='img' /></a>
         {% endif %}
         <p> Нажимай и присоединяйся к нам! </p>
     {% endif %}
