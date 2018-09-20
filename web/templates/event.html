@@ -2,7 +2,7 @@
 
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/kek.css') }}">
     <title> Информация </title>
 {% endblock head %}
 
@@ -22,15 +22,17 @@
 
 {% block content %}
     {% if session['logged_in'] %}
+    <form action="{{ action }}" method="POST">
         <div class='vote'>
             <h2 class='title'>{{ event.title }}</h2> </br>
             <h3 style="font-family: 'Inder', sans-serif; line-height: 28px; margin-bottom: 15px; color: #666;"> {{ event.content }}</h3>
-            <div>
-                <img class='calendar' src="{{ url_for('static', filename='img/calendar.png') }}"></img><div>{{ event.date }}</div>
-            </div>
+            <img class='calendar' src="{{ url_for('static', filename='img/calendar.png') }}"></img><div>{{ event.date }}</div>
+            </br>
+            <p><input class='butt' type="submit" value="Подтвердить участие"></p>
             </br>
             <h5 class='author'>{{ event.author.name }}</h5>
         </div>
+    </form>
     {% else %}
     <p> Эта страница доступна только авторизованным пользователям. <a href="/login">Присоединяйся к нам!</a></p>
     <hr class='hr-small'>

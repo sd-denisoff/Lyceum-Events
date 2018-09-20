@@ -71,6 +71,7 @@ class Event(db.Model):
     title = db.Column(db.String(128))
     content = db.Column(db.String(256))
     date = db.Column(db.String(256))
+    members = db.Column(db.Integer, default=0)
     author_login = db.Column(db.String(128), db.ForeignKey('user.login'))
     author = db.relationship('User', backref=db.backref('events'))
 

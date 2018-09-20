@@ -75,29 +75,10 @@ hr{
 .hr-small{
   width: 275px;
 }
-img.earth {
-  animation: 10s linear 0s normal none infinite running rot;
-  -webkit-animation: 10s linear 0s normal none infinite running rot;
-}
+
 .earth{
   width: 100px;
   margin: 15px;
-}
-@keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 form{

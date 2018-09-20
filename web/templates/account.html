@@ -43,6 +43,7 @@
                     <th> № </th>
                     <th> Название </th>
                     <th> Дата </th>
+                    <th> Кол-во участников </th>
                     <th> Ссылка </th>
                 </tr>
                 {% for event in all_events %}
@@ -50,6 +51,7 @@
                         <td class='left'>{{ event.id }}</td>
                         <td>{{ event.title }}</td>
                         <td> {{ event.date }} </td>
+                        <td>{{ event.members }} </td>
                         <td class ='right'><a class='dop_a' href="{{ url_for('event', event_id=event.id) }}"> Полное описание </a></td>
                     </tr>
                 {% endfor %}

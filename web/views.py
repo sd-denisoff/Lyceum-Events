@@ -24,7 +24,13 @@ def make():
 
 @app.route('/event/<int:event_id>', methods=['GET','POST'])
 def event(event_id):
-    return render_template('event.html', event=Event.get_event(event_id), event_id=event_id)
+    action = '/event/' + str(event_id)
+    if request.method == 'POST':
+        event = Event.get_event(event_id)
+        Event.query.filter_by(id=event_id).update(dict(members=event.members + 1))
+        db.session.commit()
+        return redirect('/')
+    return render_template('event.html', event=Event.get_event(event_id), event_id=event_id, action=action)
 
 
 @app.route('/login', methods=['GET', 'POST'])
