@@ -9,6 +9,7 @@ venv/
 
 # database
 database.db
+database.sqlite
 
 # error file
 errors.txt
